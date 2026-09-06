@@ -1,0 +1,195 @@
+:root {
+  --ink: #07101f;
+  --gold: #b69b57;
+  --cream: #f7f4ed;
+  --white: #fff;
+  --muted: #5e6470;
+  --line: #ddd8cb;
+  --max: 1120px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--cream);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.65;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 1.2rem 1.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.brand { text-decoration: none; }
+.brand-mark {
+  display: inline-block;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.4rem;
+  font-style: italic;
+  letter-spacing: .01em;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.brand-mark em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+nav { display: flex; gap: 1.4rem; }
+
+nav a {
+  color: var(--ink);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font: 600 .78rem/1.2 Arial, sans-serif;
+}
+
+nav a:hover, nav a.active { text-decoration: underline; text-underline-offset: 5px; }
+
+main { max-width: var(--max); margin: 0 auto; padding: 4rem 1.5rem; }
+.narrow { max-width: 820px; }
+
+.hero {
+  display: grid;
+  grid-template-columns: .85fr 1.3fr;
+  align-items: center;
+  gap: 3rem;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  border-radius: 2px;
+  display: block;
+}
+
+.eyebrow {
+  margin: 0 0 .6rem;
+  color: var(--gold);
+  font: 700 .78rem/1.2 Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .18em;
+}
+
+h1 { font-size: clamp(2.7rem, 6vw, 5.2rem); line-height: .98; margin: 0 0 1rem; }
+h2 { font-size: clamp(1.7rem, 3vw, 2.5rem); line-height: 1.15; margin-top: 0; }
+h3 { font: 700 .9rem/1.2 Arial, sans-serif; text-transform: uppercase; letter-spacing: .12em; }
+.hero h2 { font-size: 2rem; margin: 0 0 .4rem; }
+.lead { font-size: 1.35rem; margin-top: 0; }
+
+.button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: .85rem 1.25rem;
+  border: 1px solid var(--ink);
+  color: var(--white);
+  background: var(--ink);
+  text-decoration: none;
+  font: 700 .8rem/1.2 Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  cursor: pointer;
+}
+.button:hover { background: var(--gold); border-color: var(--gold); }
+
+.intro, .two-col, .testimonials, .rate-card {
+  border-top: 1px solid var(--line);
+  padding: 4rem 0;
+}
+
+.two-col { display: grid; grid-template-columns: .8fr 1.2fr; gap: 5rem; }
+
+.checklist {
+  list-style: none;
+  padding: 0;
+  columns: 2;
+}
+.checklist li { margin: .35rem 0; }
+.checklist li::before { content: "✦"; color: var(--gold); margin-right: .65rem; }
+
+.distinctives { display: grid; gap: 1rem; }
+.distinctives article { border-left: 3px solid var(--gold); padding-left: 1rem; }
+.distinctives strong { font: 700 .8rem/1.2 Arial, sans-serif; letter-spacing: .12em; }
+.distinctives p { margin: .2rem 0 0; }
+
+blockquote {
+  max-width: 850px;
+  margin: 2.5rem auto .5rem;
+  font-size: clamp(1.25rem, 2.5vw, 1.8rem);
+  line-height: 1.45;
+}
+.attribution {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .55rem;
+  text-align: center;
+  color: var(--muted);
+  margin-bottom: 3rem;
+}
+.pub-logo {
+  height: 42px;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+}
+.center { text-align: center; }
+
+.rate-card {
+  margin: 2rem 0;
+  padding: 2rem;
+  background: var(--white);
+  border: 1px solid var(--line);
+}
+.price { font-size: 2.3rem; margin: .3rem 0; }
+.price span { font-size: 1rem; color: var(--muted); }
+
+.contact-form {
+  display: grid;
+  gap: .55rem;
+  margin-top: 2rem;
+}
+.contact-form label {
+  margin-top: .7rem;
+  font: 700 .78rem/1.2 Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  border: 1px solid #c9c4b8;
+  background: white;
+  padding: .8rem;
+  font: 1rem Georgia, "Times New Roman", serif;
+}
+.contact-form textarea { resize: vertical; }
+.direct-email { margin-top: 2rem; }
+
+a { color: inherit; }
+
+footer {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  border-top: 1px solid var(--line);
+  font-size: .95rem;
+}
+
+@media (max-width: 760px) {
+  .site-header { flex-direction: column; }
+  .hero, .two-col { grid-template-columns: 1fr; gap: 2rem; }
+  .hero { padding: 2rem 0 4rem; }
+  .hero-image { order: -1; height: auto; }
+  .checklist { columns: 1; }
+}
