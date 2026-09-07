@@ -83,8 +83,10 @@ main { max-width: var(--max); margin: 0 auto; padding: 4rem 1.5rem; }
 }
 .brandmark-logo {
   height: 74px;
-  width: auto;
-  flex-shrink: 0;
+  width: 88px;
+  max-width: 88px;
+  flex: 0 0 auto;
+  object-fit: contain;
 }
 .brandmark-name {
   font-family: 'Metamorphous', Georgia, "Times New Roman", serif;
